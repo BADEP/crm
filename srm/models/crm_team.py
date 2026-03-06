@@ -10,8 +10,7 @@ class Team(models.Model):
     @api.model
     def action_your_pipeline(self):
         action = super().action_your_pipeline()
-        request_type = self.env.context.get("request_type")
-        if request_type:
+        if request_type := self.env.context.get("request_type", False):
             action["domain"] = (
                 f"[('type','=','opportunity'), ('request_type', '=', '{request_type}')]"
             )
