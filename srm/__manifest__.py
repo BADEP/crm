@@ -4,7 +4,7 @@
 {
     "name": "SRM",
     "summary": "Use CRM model for suppliers",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "development_status": "Alpha",
     "category": "CRM",
     "website": "https://github.com/OCA/crm",
@@ -17,12 +17,12 @@
         "purchase",
     ],
     "data": [
-        "security/ir.model.access.csv",
-        "views/srm_menu.xml",
         "views/srm_lead.xml",
+        "views/srm_menu.xml",
         "views/crm_lead.xml",
         "views/purchase_order.xml",
         "wizard/srm_opportunity_to_rfq.xml",
+        "security/ir.access.csv",
     ],
     "installable": True,
 }

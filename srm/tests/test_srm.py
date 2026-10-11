@@ -3,7 +3,7 @@
 from odoo import Command, fields
 from odoo.tests.common import tagged, users
 
-from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
+from odoo.addons.base.tests.common import DISABLED_MAIL_CREATE_CONTEXT
 from odoo.addons.crm.tests import common as crm_common
 
 
@@ -12,7 +12,7 @@ class TestSupplierRelationshipManagement(crm_common.TestCrmCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
+        cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CREATE_CONTEXT))
         cls.user_sales_salesman.group_ids |= cls.env.ref("purchase.group_purchase_user")
         cls.lead_1.write(
             {
@@ -67,7 +67,7 @@ class TestSupplierRelationshipManagement(crm_common.TestCrmCommon):
                             "name": f"{cls.product.name} {name_suffix}".strip(),
                             "product_id": cls.product.id,
                             "product_qty": qty,
-                            "product_uom_id": cls.product.uom_id.id,
+                            "uom_id": cls.product.uom_id.id,
                             "price_unit": cls.product.list_price,
                             "date_planned": fields.Datetime.now(),
                         }

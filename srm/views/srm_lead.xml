@@ -6,25 +6,25 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
             <xpath
-                expr='//group[@name="opportunity_partner"]//field[@name="partner_id"]'
+                expr='(//group[@name="lead_partner"]/field[@name="partner_id"])[2]'
                 position='attributes'
             >
                 <attribute name="invisible">1</attribute>
             </xpath>
             <xpath
-                expr='//group[@name="opportunity_partner"]//field[@name="partner_id"]'
+                expr='(//group[@name="lead_partner"]/field[@name="partner_id"])[2]'
                 position='before'
             >
                 <field name="request_type" invisible="1" />
                 <field
                     name="partner_id"
                     string="Supplier"
-                    invisible="request_type == 'customer'"
+                    invisible="type == 'lead' or request_type == 'customer'"
                 />
                 <field
                     name="partner_id"
                     string="Customer"
-                    invisible="request_type != 'customer'"
+                    invisible="type == 'lead' or request_type != 'customer'"
                 />
             </xpath>
         </field>
@@ -144,15 +144,6 @@
         <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter" />
     </record>
 
-    <record id="action_your_pipeline" model="ir.actions.server">
-        <field name="name">Srm: My Pipeline</field>
-        <field name="model_id" ref="crm.model_crm_team" />
-        <field name="state">code</field>
-        <field
-            name="code"
-        >action = model.with_context(request_type='supplier').action_your_pipeline()</field>
-    </record>
-
     <!-- Leads -->
     <record id="srm_lead_all_leads" model="ir.actions.act_window">
         <field name="name">Leads</field>
@@ -201,25 +192,4 @@
         <field name="search_view_id" ref="crm.crm_opportunity_report_view_search" />
     </record>
 
-    <!-- menuitem -->
-    <record id="srm_menu_root" model="ir.ui.menu">
-        <field name="action" ref="srm.srm_lead_action_pipeline" />
-    </record>
-
-    <record id="srm_opportunity_report_menu_lead" model="ir.ui.menu">
-        <field name="action" ref="srm.srm_lead_action_dashboard" />
-    </record>
-
-    <record id="srm_opportunity_report_menu" model="ir.ui.menu">
-        <field name="action" ref="srm.srm_opportunity_action_dashboard" />
-    </record>
-
-    <record id="srm_menu_leads" model="ir.ui.menu">
-        <field name="action" ref="srm.srm_lead_all_leads" />
-    </record>
-
-    <record id="menu_srm_opportunities" model="ir.ui.menu">
-        <field name="action" ref="srm.action_your_pipeline" />
-        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]" />
-    </record>
 </odoo>

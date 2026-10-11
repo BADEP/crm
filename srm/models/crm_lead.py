@@ -115,11 +115,11 @@ class CrmLead(models.Model):
         for lead in self:
             lead.purchase_amount_total = amount_per_lead.get(lead.id, 0.0)
 
-    def _create_customer(self, with_parent=None):
+    def _create_customer(self):
         """It can be a customer or supplier depending on lead request type"""
         self.ensure_one()
-        self = self.with_context(res_partner_search_mode=self.request_type)
-        return super()._create_customer(with_parent=with_parent)
+        lead = self.with_context(res_partner_search_mode=self.request_type)
+        return super(CrmLead, lead)._create_customer()
 
     def action_lead_rfq_new(self):
         self.ensure_one()
@@ -127,8 +127,7 @@ class CrmLead(models.Model):
             return self.env["ir.actions.actions"]._for_xml_id(
                 "srm.srm_rfq_partner_action"
             )
-        else:
-            return self.action_rfq_new()
+        return self.action_rfq_new()
 
     def action_rfq_new(self):
         self.ensure_one()
