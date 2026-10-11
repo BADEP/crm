@@ -148,7 +148,7 @@ class TestSupplierRelationshipManagement(crm_common.TestCrmCommon):
         # invoke wizard and apply it
         convert = (
             self.env["srm.rfq.partner"]
-            .with_context(**{"active_model": "crm.lead", "active_id": lead.id})
+            .with_context(active_model="crm.lead", active_id=lead.id)
             .create({})
         )
 
@@ -175,7 +175,7 @@ class TestSupplierRelationshipManagement(crm_common.TestCrmCommon):
         # invoke wizard and apply it
         convert = (
             self.env["srm.rfq.partner"]
-            .with_context(**{"active_model": "crm.lead", "active_id": lead.id})
+            .with_context(active_model="crm.lead", active_id=lead.id)
             .create({"action": "exist"})
         )
 
@@ -210,12 +210,7 @@ class TestSupplierRelationshipManagement(crm_common.TestCrmCommon):
         # invoke wizard and apply it
         convert = (
             self.env["srm.rfq.partner"]
-            .with_context(
-                **{
-                    "active_model": "crm.lead",
-                    "active_id": lead.id,
-                }
-            )
+            .with_context(active_model="crm.lead", active_id=lead.id)
             .create({"action": "create"})
         )
 
@@ -238,11 +233,7 @@ class TestSupplierRelationshipManagement(crm_common.TestCrmCommon):
         convert = (
             self.env["srm.rfq.partner"]
             .with_context(
-                **{
-                    "active_model": "crm.lead",
-                    "active_id": lead.id,
-                    "default_action": "nothing",
-                }
+                active_model="crm.lead", active_id=lead.id, default_action="nothing"
             )
             .create({})
         )
