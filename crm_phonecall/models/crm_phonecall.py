@@ -2,6 +2,7 @@
 # Copyright 2017 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+import typing
 from functools import reduce
 
 from odoo import api, fields, models
@@ -13,7 +14,7 @@ class CrmPhonecall(models.Model):
     _name = "crm.phonecall"
     _description = "Phonecall"
     _order = "id desc"
-    _inherit = ["mail.thread", "utm.mixin"]
+    _inherit: typing.ClassVar[list[str]] = ["mail.thread", "utm.mixin"]
 
     date_action_last = fields.Datetime(string="Last Action")
     date_action_next = fields.Datetime(string="Next Action")
@@ -141,8 +142,7 @@ class CrmPhonecall(models.Model):
             phonecall_dict[call.id] = new_id
         if return_recordset:
             return reduce(lambda x, y: x + y, phonecall_dict.values())
-        else:
-            return phonecall_dict
+        return phonecall_dict
 
     def redirect_phonecall_view(self):
         """Redirect on the phonecall related view."""

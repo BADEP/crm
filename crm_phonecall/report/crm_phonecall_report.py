@@ -50,7 +50,7 @@ class CrmPhonecallReport(models.Model):
     date_closed = fields.Datetime(string="Close Date", readonly=True, index=True)
 
     def _select(self):
-        select_str = """
+        return """
             select
                 id,
                 c.date_open as opening_date,
@@ -71,13 +71,11 @@ class CrmPhonecallReport(models.Model):
                   'epoch' from (
                   c.date_open-c.create_date))/(3600*24) as delay_open
            """
-        return select_str
 
     def _from(self):
-        from_str = """
+        return """
             from crm_phonecall c
         """
-        return from_str
 
     def init(self):
         """Initialize the report."""

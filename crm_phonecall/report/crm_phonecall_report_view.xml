@@ -24,7 +24,7 @@
             </pivot>
         </field>
     </record>
-    <!-- pylint: disable=xml-dangerous-filter-wo-user_id -->
+    <!-- oca-hooks:disable=xml-dangerous-filter-wo-user -->
     <record id="filter_crm_phonecall_sales_team" model="ir.filters">
         <field name="name">By Sales Team</field>
         <field name="model_id">crm.phonecall.report</field>
@@ -34,7 +34,7 @@
             name="context"
         >{'group_by': ['team_id'], 'pivot_measures': ['nbr_cases', 'duration']}</field>
     </record>
-    <!-- pylint: disable=xml-dangerous-filter-wo-user_id -->
+    <!-- oca-hooks:disable=xml-dangerous-filter-wo-user -->
     <record id="filter_crm_phonecall_delay_to_close" model="ir.filters">
         <field name="name">Delay To Close</field>
         <field name="model_id">crm.phonecall.report</field>
@@ -44,7 +44,7 @@
             name="context"
         >{'group_by': ['team_id'], 'pivot_measures': ['delay_close']}</field>
     </record>
-    <!-- pylint: disable=xml-dangerous-filter-wo-user_id -->
+    <!-- oca-hooks:disable=xml-dangerous-filter-wo-user -->
     <record id="filter_crm_phonecall_phone_call_to_do" model="ir.filters">
         <field name="name">Phone Calls To Do</field>
         <field name="model_id">crm.phonecall.report</field>
