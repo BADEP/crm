@@ -6,17 +6,30 @@
         <field name="inherit_id" ref="crm.crm_lead_view_form" />
         <field name="arch" type="xml">
             <xpath
-                expr="//group[@name='opportunity_partner']//field[@name='partner_id']"
+                expr="//group[@name='lead_partner']/field[@name='partner_id'][2]"
                 position="before"
             >
-                <field name="customer_currency_id" />
+                <field name="customer_currency_id" invisible="type == 'lead'" />
                 <field name="is_same_currency" invisible="1" />
-                <field name="amount_customer_currency" invisible="is_same_currency" />
+                <field
+                    name="amount_customer_currency"
+                    invisible="is_same_currency or type == 'lead'"
+                />
             </xpath>
-            <field name="expected_revenue" position="attributes">
+            <xpath
+                expr="(//field[@name='expected_revenue'])[1]"
+                position="attributes"
+            >
                 <attribute name="readonly">not is_same_currency</attribute>
                 <attribute name="force_save">1</attribute>
-            </field>
+            </xpath>
+            <xpath
+                expr="(//field[@name='expected_revenue'])[2]"
+                position="attributes"
+            >
+                <attribute name="readonly">not is_same_currency</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
         </field>
     </record>
 
