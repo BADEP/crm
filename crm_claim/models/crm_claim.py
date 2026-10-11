@@ -2,6 +2,8 @@
 # Copyright 2017 Tecnativa - Vicent Cubells
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
+from typing import ClassVar
+
 from odoo import api, fields, models
 from odoo.fields import Domain
 from odoo.tools import html2plaintext
@@ -23,7 +25,7 @@ class CrmClaim(models.Model):
     _name = "crm.claim"
     _description = "Claim"
     _order = "priority,date desc"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit: ClassVar[list[str]] = ["mail.thread", "mail.activity.mixin"]
 
     @api.model
     def _get_default_stage_id(self):

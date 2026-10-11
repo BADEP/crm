@@ -57,7 +57,7 @@
             </graph>
         </field>
     </record>
-    <!-- pylint: disable=xml-dangerous-filter-wo-user -->
+    <!-- oca-hooks:disable=xml-dangerous-filter-wo-user -->
     <record id="filter_report_crm_claim_workload" model="ir.filters">
         <field name="name">Workload</field>
         <field name="model_id">crm.claim.report</field>
