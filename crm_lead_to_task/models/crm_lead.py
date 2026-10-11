@@ -42,7 +42,6 @@ class CrmLead(models.Model):
             "description": self.description,
             "project_id": project.id,
             "partner_id": partner.id,
-            "email_cc": self.email_cc,
             "lead_id": self.id,
         }
 

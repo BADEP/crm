@@ -21,13 +21,13 @@ Lead to Task
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fcrm-lightgray.png?logo=github
-    :target: https://github.com/OCA/crm/tree/19.0/crm_lead_to_task
+    :target: https://github.com/OCA/crm/tree/20.0/crm_lead_to_task
     :alt: OCA/crm
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/crm-19-0/crm-19-0-crm_lead_to_task
+    :target: https://translation.odoo-community.org/projects/crm-20-0/crm-20-0-crm_lead_to_task
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/crm&target_branch=19.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/crm&target_branch=20.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -35,12 +35,12 @@ Lead to Task
 This module allows you to convert leads or opportunities into project
 tasks. It supports the following features:
 
-- Optional automatic archiving of the lead after conversion.
+-  Optional automatic archiving of the lead after conversion.
 
-- Ability to configure a Force Project so tasks are created directly
-  without a popup.
+-  Ability to configure a Force Project so tasks are created directly
+   without a popup.
 
-- Preserves attachments and messages from the lead.
+-  Preserves attachments and messages from the lead.
 
 **DISCLAIMER:** This module is a forward-port of a module from Odoo S.A.
 and as such, it is not included in the OCA CLA. That means we do not
@@ -56,8 +56,8 @@ Configuration
 
 1. Ensure that your user has at least the following access rights:
 
-   - Project: Project User
-   - CRM: Salesperson
+   -  Project: Project User
+   -  CRM: Salesperson
 
 These permissions are required to create tasks from leads.
 
@@ -66,12 +66,13 @@ Usage
 
 1. Open the CRM settings and configure:
 
-   - Force Project: If set, all tasks created from leads will be
-     assigned to this project without asking the user.
-   - Archive Lead: If enabled, the lead will be archived after
-     converting it to a task.
+   -  Force Project: If set, all tasks created from leads will be
+      assigned to this project without asking the user.
+   -  Archive Lead: If enabled, the lead will be archived after
+      converting it to a task.
 
-   |crm_settings|
+   .. image:: https://raw.githubusercontent.com/OCA/crm/20.0/crm_lead_to_task/static/description/crm_settings.png
+      :alt: crm_settings
 
 2. Navigate to *CRM > Sales > My pipeline*
 
@@ -79,29 +80,27 @@ Usage
 
 4. Depending on the Archive Lead setting:
 
-   - Enabled → The button will be labeled "Convert to Task".
+   -  Enabled → The button will be labeled "Convert to Task".
 
-   |convert_to_task|
+   .. image:: https://raw.githubusercontent.com/OCA/crm/20.0/crm_lead_to_task/static/description/convert_to_task.png
+      :alt: convert_to_task
 
-   - Disabled → The button will be labeled "Create Task".
+   -  Disabled → The button will be labeled "Create Task".
 
-   |create_task|
+   .. image:: https://raw.githubusercontent.com/OCA/crm/20.0/crm_lead_to_task/static/description/create_task.png
+      :alt: create_task
 
 5. When clicking the button (either Create Task or Convert to Task), two
    scenarios are possible:
 
-   - Force Project set → The task is created immediately and linked to
-     the configured project.
-   - No Force Project set → A popup appears allowing you to select a
-     project. Click Create Task in the popup to proceed.
+   -  Force Project set → The task is created immediately and linked to
+      the configured project.
+   -  No Force Project set → A popup appears allowing you to select a
+      project. Click Create Task in the popup to proceed.
 
 6. After creation, you will be redirected to the new task form view. All
    relevant lead information, including attachments and messages, will
    be copied to the task.
-
-.. |crm_settings| image:: https://raw.githubusercontent.com/OCA/crm/19.0/crm_lead_to_task/static/description/crm_settings.png
-.. |convert_to_task| image:: https://raw.githubusercontent.com/OCA/crm/19.0/crm_lead_to_task/static/description/convert_to_task.png
-.. |create_task| image:: https://raw.githubusercontent.com/OCA/crm/19.0/crm_lead_to_task/static/description/create_task.png
 
 Bug Tracker
 ===========
@@ -109,7 +108,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/crm/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/crm/issues/new?body=module:%20crm_lead_to_task%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/crm/issues/new?body=module:%20crm_lead_to_task%0Aversion:%2020.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -125,12 +124,12 @@ Authors
 Contributors
 ------------
 
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Pedro M. Baeza
-  - Carolina Fernandez
+   -  Pedro M. Baeza
+   -  Carolina Fernandez
 
-- Ruchir Shukla <ruchir@bizzappdev.com>
+-  Ruchir Shukla <ruchir@bizzappdev.com>
 
 Maintainers
 -----------
@@ -145,6 +144,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/crm <https://github.com/OCA/crm/tree/19.0/crm_lead_to_task>`_ project on GitHub.
+This module is part of the `OCA/crm <https://github.com/OCA/crm/tree/20.0/crm_lead_to_task>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
