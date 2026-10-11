@@ -21,18 +21,18 @@ Sequential Code for Claims
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fcrm-lightgray.png?logo=github
-    :target: https://github.com/OCA/crm/tree/19.0/crm_claim_code
+    :target: https://github.com/OCA/crm/tree/20.0/crm_claim_code
     :alt: OCA/crm
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/crm-19-0/crm-19-0-crm_claim_code
+    :target: https://translation.odoo-community.org/projects/crm-20-0/crm-20-0-crm_claim_code
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/crm&target_branch=19.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/crm&target_branch=20.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-- This module adds a sequential code for claims.
+-  This module adds a sequential code for claims.
 
 **Table of contents**
 
@@ -44,9 +44,9 @@ Usage
 
 To use this module, you need to:
 
-- Go to menu **CRM > After Sale > Claims** and create a new claim.
-- Enter claim subject and Save it. You must see a new number for this
-  claim.
+-  Go to menu **CRM > After Sale > Claims** and create a new claim.
+-  Enter claim subject and Save it. You must see a new number for this
+   claim.
 
 Bug Tracker
 ===========
@@ -54,7 +54,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/crm/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/crm/issues/new?body=module:%20crm_claim_code%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/crm/issues/new?body=module:%20crm_claim_code%0Aversion:%2020.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -70,20 +70,20 @@ Authors
 Contributors
 ------------
 
-- Ana Juaristi <anajuarist@avanzosc.es>
-- Iker Coranti <ikercoranti@avanzosc.com>
-- Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
-- Alfredo de la Fuente <alfredodelafuente@avanzosc.es>
-- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  Ana Juaristi <anajuarist@avanzosc.es>
+-  Iker Coranti <ikercoranti@avanzosc.com>
+-  Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
+-  Alfredo de la Fuente <alfredodelafuente@avanzosc.es>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  - Ernesto Tejeda
-  - Pedro M. Baeza
-  - Vicent Cubells
+   -  Ernesto Tejeda
+   -  Pedro M. Baeza
+   -  Vicent Cubells
 
-- `APSL-Nagarro <https://apsl.tech>`__:
+-  `APSL-Nagarro <https://apsl.tech>`__:
 
-  - Bernat Obrador <bobrador@apsl.net>
+   -  Bernat Obrador <bobrador@apsl.net>
 
 Maintainers
 -----------
@@ -98,6 +98,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/crm <https://github.com/OCA/crm/tree/19.0/crm_claim_code>`_ project on GitHub.
+This module is part of the `OCA/crm <https://github.com/OCA/crm/tree/20.0/crm_claim_code>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
