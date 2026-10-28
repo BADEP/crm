@@ -2,7 +2,6 @@
 # Copyright 2017 Tecnativa - Vicent Cubells
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-import typing
 from functools import reduce
 
 from odoo import api, fields, models
@@ -14,7 +13,7 @@ class CrmPhonecall(models.Model):
     _name = "crm.phonecall"
     _description = "Phonecall"
     _order = "id desc"
-    _inherit: typing.ClassVar[list[str]] = ["mail.thread", "utm.mixin"]
+    _inherit = ["mail.thread", "utm.mixin"]  # noqa: RUF012
 
     date_action_last = fields.Datetime(string="Last Action")
     date_action_next = fields.Datetime(string="Next Action")
