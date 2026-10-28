@@ -34,7 +34,7 @@ class CrmPhonecall2phonecall(models.TransientModel):
     note = fields.Text()
 
     def get_vals_action_schedule(self):
-        vals = {
+        return {
             "schedule_time": self.date,
             "name": self.name,
             "user_id": self.user_id.id,
@@ -42,7 +42,6 @@ class CrmPhonecall2phonecall(models.TransientModel):
             "tag_ids": self.tag_ids.ids,
             "action": self.action,
         }
-        return vals
 
     def action_schedule(self):
         """Schedule a phonecall."""
