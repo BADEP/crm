@@ -23,7 +23,7 @@ class CrmClaim(models.Model):
     _name = "crm.claim"
     _description = "Claim"
     _order = "priority,date desc"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin"]  # noqa: RUF012
 
     @api.model
     def _get_default_stage_id(self):

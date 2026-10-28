@@ -67,7 +67,7 @@ class CrmClaimReport(models.Model):
     )
 
     def _select(self):
-        select_str = """
+        return """
             SELECT
             min(c.id) AS id,
             c.date AS claim_date,
@@ -98,21 +98,18 @@ class CrmClaimReport(models.Model):
                     c.date_deadline - c.date_closed))/(3600*24)
                     AS delay_expected
         """
-        return select_str
 
     def _from(self):
-        from_str = """
+        return """
             crm_claim c
         """
-        return from_str
 
     def _group_by(self):
-        group_by_str = """
+        return """
             GROUP BY c.date, c.user_id, c.team_id, c.stage_id, c.categ_id,
                 c.partner_id, c.company_id, c.create_date, c.priority,
                 c.type_action, c.date_deadline, c.date_closed, c.id
         """
-        return group_by_str
 
     def init(self):
         """Display Number of cases And Team Name

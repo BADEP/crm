@@ -5,7 +5,7 @@
 
 {
     "name": "Claims Management",
-    "version": "19.0.1.0.1",
+    "version": "20.0.1.0.0",
     "category": "Customer Relationship Management",
     "author": "Odoo S.A., Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/crm",
@@ -13,8 +13,6 @@
     "summary": "Track your customers/vendors claims and grievances.",
     "depends": ["crm"],
     "data": [
-        "security/ir.model.access.csv",
-        "security/crm_claim_security.xml",
         "data/crm_claim_data.xml",
         "views/crm_claim_views.xml",
         "views/crm_claim_category_views.xml",
@@ -22,6 +20,7 @@
         "views/res_partner_views.xml",
         "views/crm_claim_menu.xml",
         "report/crm_claim_report_view.xml",
+        "security/ir.access.csv",
     ],
     "demo": ["demo/crm_claim_demo.xml"],
     "installable": True,
